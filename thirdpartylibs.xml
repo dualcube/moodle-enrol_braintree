@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <libraries>
   <library>
-    <location>braintree/</location>
+    <location>braintree</location>
     <name>Braintree API library</name>
     <license>BSDL</license>
     <version>v1.49</version>

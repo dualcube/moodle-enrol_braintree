@@ -121,7 +121,7 @@ class enrol_braintree_plugin extends enrol_plugin {
      * @param navigation_node $instancesnode
      * @param stdClass $instance
      * @return void
-     */    
+     */
     public function add_course_navigation($instancesnode, stdClass $instance) {
         if ($instance->enrol !== 'braintree') {
              throw new coding_exception('Invalid enrol instance type!');

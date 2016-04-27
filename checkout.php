@@ -293,7 +293,7 @@ if ($customer = $DB->get_record('braintree_customer', array('iduser' => $USER->i
     }
 
 
-    // --- HELPER FUNCTIONS --------------------------------------------------------------------------------------!
+    // HELPER FUNCTIONS.
 
     /**
      * Send payment error message to the admin.

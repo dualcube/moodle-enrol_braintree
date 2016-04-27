@@ -26,8 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($ADMIN->fulltree) {
 
-         // --- settings ------------------------------------------------------------------------------------------
-    $settings->add(new admin_setting_heading('enrol_braintree_settings', '', get_string('pluginname_desc', 'enrol_braintree')));
+         // Settings.
+      $settings->add(new admin_setting_heading('enrol_braintree_settings', '', get_string('pluginname_desc', 'enrol_braintree')));
       $options = array(
         'sandbox' => 'Test Mode',
           'production' => 'live Mode'
@@ -60,7 +60,7 @@ if ($ADMIN->fulltree) {
       $settings->add(new admin_setting_configselect('enrol_braintree/expiredaction', get_string('expiredaction',
         'enrol_braintree'), get_string('expiredaction_help', 'enrol_braintree'), ENROL_EXT_REMOVED_SUSPENDNOROLES, $options));
 
-      // ---Enrol instance defaults----------------------------------------------------------------------------
+      // Enrol instance defaults.
       $settings->add(new admin_setting_heading('enrol_braintree_defaults',
         get_string('enrolinstancedefaults', 'admin'), get_string('enrolinstancedefaults_desc', 'admin')));
 
@@ -81,9 +81,10 @@ if ($ADMIN->fulltree) {
           $student = get_archetype_roles('student');
           $student = reset($student);
           $settings->add(new admin_setting_configselect('enrol_braintree/roleid',
-          get_string('defaultrole', 'enrol_braintree'), get_string('defaultrole_desc', 'enrol_braintree'), $student->id, $options));
+            get_string('defaultrole', 'enrol_braintree'), get_string('defaultrole_desc', 'enrol_braintree'),
+            $student->id, $options));
       }
 
         $settings->add(new admin_setting_configduration('enrol_braintree/enrolperiod',
-        get_string('enrolperiod', 'enrol_braintree'), get_string('enrolperiod_desc', 'enrol_braintree'), 0));
+          get_string('enrolperiod', 'enrol_braintree'), get_string('enrolperiod_desc', 'enrol_braintree'), 0));
 }

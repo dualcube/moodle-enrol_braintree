@@ -16,7 +16,7 @@
 
 /**
  * Course wise edit form.
- * 
+ *
  * Adds new instance of enrol_braintree to specified course
  * or edits current instance.
  *
