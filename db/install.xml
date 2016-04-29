@@ -31,7 +31,7 @@
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
     </TABLE>
-	<TABLE NAME="braintree_customer" COMMENT="Holds all known information about Braintree Customer">
+	<TABLE NAME="enrol_braintree_customer" COMMENT="Holds all known information about Braintree Customer">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="iduser" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>

@@ -46,9 +46,10 @@ if (empty($_POST) or !empty($_GET)) {
     print_error("Sorry, you can not use the script that way.");
 }
 
+$post = (array) data_submitted();
 $data = new stdClass();
 
-foreach ($_POST as $key => $value) {
+foreach ($post as $key => $value) {
     $data->$key = $value;
 }
 $custom = explode('-', $data->custom);
@@ -107,7 +108,7 @@ Braintree_Configuration::merchantId($plugin->get_config('merchantId'));
 Braintree_Configuration::publicKey($plugin->get_config('publickey'));
 Braintree_Configuration::privateKey($plugin->get_config('privatekey'));
 
-$nonce = $_POST ['payment_method_nonce'];
+$nonce = $post ['payment_method_nonce'];
 
 if ($customer = $DB->get_record('braintree_customer', array('iduser' => $USER->id))) {
     $customerid = $customer->idcustomer;
