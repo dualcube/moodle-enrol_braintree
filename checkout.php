@@ -112,7 +112,7 @@ $nonce = $post ['payment_method_nonce'];
 
 if ($customer = $DB->get_record('enrol_braintree_customer', array('iduser' => $USER->id))) {
     $customerid = $customer->idcustomer;
-    $resultp = Braintree_PaymentMethod::create([
+    $result = Braintree_PaymentMethod::create([
     'customerId' => $customerid,
     'paymentMethodNonce' => $nonce,
     'options' => [
