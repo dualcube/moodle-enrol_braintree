@@ -260,7 +260,7 @@ class enrol_braintree_plugin extends enrol_plugin {
                 Braintree_Configuration::publicKey($plugin->get_config('publickey'));
                 Braintree_Configuration::privateKey($plugin->get_config('privatekey'));
                 // Customer details.
-                if ($user = $DB->get_record('enrol_braintree_customer', array('iduser' => $USER->id))) {
+                if ($user = $DB->get_record('braintree_customer', array('iduser' => $USER->id))) {
                     $customerid = $user->idcustomer;
                     $customer = Braintree_Customer::find($customerid);
                     $clienttoken = Braintree_ClientToken::generate([

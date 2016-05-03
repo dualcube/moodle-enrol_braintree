@@ -110,7 +110,7 @@ Braintree_Configuration::privateKey($plugin->get_config('privatekey'));
 
 $nonce = $post ['payment_method_nonce'];
 
-if ($customer = $DB->get_record('enrol_braintree_customer', array('iduser' => $USER->id))) {
+if ($customer = $DB->get_record('braintree_customer', array('iduser' => $USER->id))) {
     $customerid = $customer->idcustomer;
     $resultp = Braintree_PaymentMethod::create([
     'customerId' => $customerid,
@@ -137,7 +137,7 @@ if ($customer = $DB->get_record('enrol_braintree_customer', array('iduser' => $U
     $record->iduser = $USER->id;
     $record->idcustomer = $customerid;
     $record->create_date = time();
-    $DB->insert_record('enrol_braintree_customer', $record);
+    $DB->insert_record('braintree_customer', $record);
 }
     $result2 = Braintree_Transaction::sale([
     'customerId' => $customerid,
